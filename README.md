@@ -2,6 +2,8 @@
 
 ## Architecture
 
+![Azure-Key-Vault-Integration-with-AKS drawio](https://github.com/hieunguyen0202/Azure-Key-Vault-Integration-with-AKS/assets/98166568/c7692ea0-c9c8-4e63-80b7-3a7b8578e88b)
+
 ## Implementation
 ### AKS setup using CLI
 - List Resource Group
