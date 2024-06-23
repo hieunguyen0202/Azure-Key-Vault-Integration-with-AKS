@@ -75,7 +75,7 @@ export USER_ASSIGNED_CLIENT_ID="$(az identity show -g $RESOURCE_GROUP --name $UA
 export IDENTITY_TENANT=$(az aks show --name $CLUSTER_NAME --resource-group $RESOURCE_GROUP --query identity.tenantId -o tsv)
 ```
 
-- Create a role assignment that grants the workload ID access the key vault
+- Create a role assignment that grants the workload ID access the key vault (Assign role for managed identity)
 
 ```
 export KEYVAULT_SCOPE=$(az keyvault show --name $KEYVAULT_NAME --query id -o tsv)
