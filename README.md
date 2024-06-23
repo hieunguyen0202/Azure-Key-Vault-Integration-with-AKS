@@ -196,3 +196,8 @@ kubectl exec busybox-secrets-store-inline-wi -- ls /mnt/secrets-store/
 ```
 kubectl exec busybox-secrets-store-inline-wi -- cat /mnt/secrets-store/secret1
 ```
+### Delete Everything
+
+```
+az group delete --name keyvault-demo
+```
