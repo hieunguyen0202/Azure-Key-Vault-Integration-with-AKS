@@ -42,6 +42,13 @@ kubectl get pods -n kube-system -l 'app in (secrets-store-csi-driver,secrets-sto
 ```
 az keyvault create -n aks-demo-keyvault -g myResourceGroup -l eastus2 --enable-rbac-authorization
 ```
+```
+## Create a new Azure key vault
+az keyvault create --name <keyvault-name> --resource-group myResourceGroup --location eastus2 --enable-rbac-authorization
+
+## Update an existing Azure key vault
+az keyvault update --name <keyvault-name> --resource-group myResourceGroup --location eastus2 --enable-rbac-authorization
+```
 - To view access. go to `Access control (IAM)` -> Click on `Add role assignment` -> Choose `Key Vault Administrator`
 - And assign access to `User, group, or service principal` -> Select a approriate member
 - Create a new `key` and `secret`
