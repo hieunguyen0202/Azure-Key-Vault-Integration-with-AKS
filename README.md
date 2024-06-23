@@ -12,7 +12,7 @@ az group list --output table
 - Create Azure Resource Group
 
 ```
-az group create --name keyvault-demo --location centralus
+az group create --name myResourceGroup --location eastus2
 ```
 
 ### AKS Creation and Configuration
@@ -20,13 +20,13 @@ az group create --name keyvault-demo --location centralus
 - Create an AKS cluster with Azure Key Vault provider for Secrets Store CSI Driver support
 
 ```
-az aks create --name keyvault-demo-cluster -g keyvault-demo --node-count 1 --enable-addons azure-keyvault-secrets-provider --enable-oidc-issuer --enable-workload-identity --generate-ssh-keys
+az aks create --name myAKSCluster --resource-group myResourceGroup --node-count 1 --enable-addons azure-keyvault-secrets-provider --enable-oidc-issuer --enable-workload-identity --generate-ssh-keys
 ```
 
 - Get the Kubernetes cluster credentials (Update kubeconfig)
 
 ```
-az aks get-credentials --resource-group keyvault-demo --name keyvault-demo-cluster
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
 - Verify that each node in your cluster's node pool has a Secrets Store CSI Driver pod and a Secrets Store Provider Azure pod running
@@ -40,7 +40,7 @@ kubectl get pods -n kube-system -l 'app in (secrets-store-csi-driver,secrets-sto
 - Create a key vault with Azure role-based access control (Azure RBAC).
 
 ```
-az keyvault create -n aks-demo-abhi -g keyvault-demo -l eastus --enable-rbac-authorization
+az keyvault create -n aks-demo-keyvault -g myResourceGroup -l eastus2 --enable-rbac-authorization
 ```
 - To view access. go to `Access control (IAM)` -> Click on `Add role assignment` -> Choose `Key Vault Administrator`
 - And assign access to `User, group, or service principal` -> Select a approriate member
