@@ -5,7 +5,7 @@
 ## Implementation
 ### AKS setup using CLI
 - List Resource Group
-- 
+  
 ```
 az group list --output table
 ```
