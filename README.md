@@ -108,7 +108,11 @@ metadata:
   namespace: ${SERVICE_ACCOUNT_NAMESPACE}
 EOF
 ```
+- Check status
 
+```
+kubectl get sa
+```
 - Setup Federation
 
 ```
