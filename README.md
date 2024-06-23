@@ -58,11 +58,11 @@ az keyvault update --name <keyvault-name> --resource-group myResourceGroup --loc
 - Configure workload identity
 
 ```
-export SUBSCRIPTION_ID=fe4a1fdb-6a1c-4a6d-a6b0-dbb12f6a00f8
-export RESOURCE_GROUP=keyvault-demo
+export SUBSCRIPTION_ID=4078f7a0-8adc-47c8-9691-309ad92b124a
+export RESOURCE_GROUP=myResourceGroup
 export UAMI=azurekeyvaultsecretsprovider-keyvault-demo-cluster
-export KEYVAULT_NAME=aks-demo-abhi
-export CLUSTER_NAME=keyvault-demo-cluster
+export KEYVAULT_NAME=aks-demo-keyvault
+export CLUSTER_NAME=myAKSCluster
 
 az account set --subscription $SUBSCRIPTION_ID
 ```
